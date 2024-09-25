@@ -1,0 +1,15 @@
+[submodule "alvium-csi2-driver"]
+	url = https://github.com/alliedvision/alvium-csi2-driver.git
+	path = alvium-csi2-driver
+[submodule "nvidia-oot"]
+	url = https://github.com/alliedvision/nvidia-oot.git
+	path = nvidia-oot
+[submodule "nvidia-hwpm"]
+	url = https://github.com/alliedvision/nvidia-hwpm.git
+	path = nvidia-hwpm
+[submodule "nvidia-nvethernetrm"]
+	url = https://github.com/alliedvision/nvidia-nvethernetrm.git
+	path = nvidia-nvethernetrm
+[submodule "nvidia-nvgpu"]
+	url = https://github.com/alliedvision/nvidia-nvgpu.git
+	path = nvidia-nvgpu
