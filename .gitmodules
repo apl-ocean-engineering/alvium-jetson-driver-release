@@ -5,11 +5,11 @@
 	url = https://github.com/alliedvision/nvidia-oot.git
 	path = nvidia-oot
 [submodule "nvidia-hwpm"]
-	url = https://github.com/alliedvision/nvidia-hwpm.git
+	url = https://nv-tegra.nvidia.com/r/linux-hwpm.git
 	path = nvidia-hwpm
 [submodule "nvidia-nvethernetrm"]
-	url = https://github.com/alliedvision/nvidia-nvethernetrm.git
+	url = https://nv-tegra.nvidia.com/r/kernel/nvethernetrm.git
 	path = nvidia-nvethernetrm
 [submodule "nvidia-nvgpu"]
-	url = https://github.com/alliedvision/nvidia-nvgpu.git
+	url = https://nv-tegra.nvidia.com/r/linux-nvgpu.git
 	path = nvidia-nvgpu
