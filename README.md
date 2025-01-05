@@ -2,6 +2,8 @@
 
 Derived from the upstream Allied Vision [Alvium CSI Driver for Jetpack 6](https://github.com/alliedvision/alvium-jetson-driver-release) with local modifications specific to the [Trisect project](https://trisect-perception-sensor.gitlab.io/trisect-docs/).
 
+This branch targets [**Jetpack 6.1**](https://developer.nvidia.com/embedded/jetpack-sdk-61) / [**L4T-36.40**](https://developer.nvidia.com/embedded/jetson-linux-r3640)
+
 
 ## Building
 
