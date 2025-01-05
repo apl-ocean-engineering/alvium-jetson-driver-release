@@ -1,4 +1,63 @@
-# Allied Vision Alvium CSI driver for Jetpack 6 
+# Trisect-specific Allied Vision Alvium CSI driver for Jetpack 6 
+
+Derived from the upstream Allied Vision [Alvium CSI Driver for Jetpack 6](https://github.com/alliedvision/alvium-jetson-driver-release) with local modifications specific to the [Trisect project](https://trisect-perception-sensor.gitlab.io/trisect-docs/).
+
+
+## Building
+
+1. Clone this repository **including all submodules**
+
+    ```shell
+        git clone --recurse-submodules https://github.com/apl-ocean-engineering/alvium-jetson-driver-release.git
+    ```
+
+    or:
+
+    ```shell
+        git clone https://github.com/apl-ocean-engineering/alvium-jetson-driver-release.git
+        git submodule update --init
+    ```
+
+2. Download the Jetson Linux driver package (BSP) and cross compiler (registration with Nvidia required).   The driver package / BSP  **must** match your version of Jetpack:
+
+    * [Downloads for Jetpack 6.0 / Linux4Tegra 36.3](https://developer.nvidia.com/embedded/jetson-linux-r363)
+
+3. Extract the driver package **in the current directory**: 
+
+    ```shell
+        tar -xvf jetson_linux_r36*.bz2
+    ```
+4. Extract the kernel headers from the driver package:
+
+    ```shell
+        cd Linux_for_Tegra/kernel/
+        tar -xvf kernel_headers.tbz2
+    ```
+5. Extract the cross compiler **in the current directory**
+
+    ```shell
+        tar -xvf aarch64--glibc--stable-*.tar.bz2
+    ```
+
+6. Build the modules:
+    ```shell
+        export ARCH=arm64
+        export CROSS_COMPILE=<path to cross compiler>/bin/aarch64-buildroot-linux-gnu-
+        export KERNEL_SRC=Linux_for_Tegra/kernel/linux-headers-*-linux_x86_64/3rdparty/canonical/linux-jammy/kernel-source/
+        make all 
+    ```
+7. Install the driver modules
+    ```shell
+        export INSTALL_MOD_PATH=<path to install directory>
+        make install
+    ```
+
+
+
+
+
+
+
 
 ## Compatibility
 ### SoMs + Carrier Boards 
@@ -28,31 +87,6 @@
     6. Select "Save and reboot to reconfigure pins"
 4. After the board has reboot the camera can be access with V4L2 and Vimba X
 
-## Building
-1. Clone this repository including all submodules
-2. Download the Jetson Linux driver package and cross compiler from: [Jetson Linux Downloads](https://developer.nvidia.com/embedded/jetson-linux)
-3. Extract the driver package: 
-    ```shell
-        tar -xf jetson_linux_r36*.bz2
-    ```
-4. Extract the kernel headers from the driver package:
-    ```shell
-        cd Linux_for_Tegra/kernel/
-        tar -xf kernel_headers.tbz2
-    ```
-5. Extract the cross compiler
-6. Build the modules:
-    ```shell
-        export ARCH=arm64
-        export CROSS_COMPILE=<path to cross compiler>/bin/aarch64-buildroot-linux-gnu-
-        export KERNEL_SRC=Linux_for_Tegra/kernel/linux-headers-*-linux_x86_64/3rdparty/canonical/linux-jammy/kernel-source/
-        make all 
-    ```
-7. Install the driver modules
-    ```shell
-        export INSTALL_MOD_PATH=<path to install directory>
-        make install
-    ```
    
 # Beta Disclaimer
 
